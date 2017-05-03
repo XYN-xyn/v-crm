@@ -1,0 +1,21 @@
+//全局样式
+html{
+    font-family: PingFangSC-Regular,sans-serif;
+}
+body,div,ul,li,h1,h2,h3,a,span,img,i,nav,aside,header{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+/*清除浮动公共样式*/
+.clearfloat::after{
+    display: block;
+    content: ' ';
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.clearfloat{
+    zoom: 1;
+}
