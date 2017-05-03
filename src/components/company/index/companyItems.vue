@@ -47,7 +47,7 @@
         }
     }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     .companyItems{
         height: calc(~'100% - 44px');
         background-color: #f5f5f5;

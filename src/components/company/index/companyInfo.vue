@@ -26,7 +26,7 @@
 <script>
 
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     div{
         font-size: 14px;
         color: #333;

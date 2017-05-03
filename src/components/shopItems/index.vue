@@ -124,11 +124,9 @@
         }
     }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     .shopItem-contanier{
-        height: 100%;
         background-color: #f5f5f5;
-        overflow: scroll;
         padding-bottom: 45px;
         .shopItem-h{
             display: flex;

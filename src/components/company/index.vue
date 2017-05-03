@@ -46,7 +46,7 @@
         }
     }
 </script>
-<style lang="less" scope>
+<style lang="less" scoped>
     @blue: #64C0F4;
     .compony{
         height: 100%;
