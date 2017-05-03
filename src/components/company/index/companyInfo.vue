@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="compony-container">
         <div class="compony-logo">
             <img src="../../../assets/img/063cfbfe6f71107cf6290f1524685c82.jpg">
         </div>
@@ -26,8 +26,8 @@
 <script>
 
 </script>
-<style lang="less" scoped>
-    div{
+<style lang="less">
+    .compony-container{
         font-size: 14px;
         color: #333;
     }

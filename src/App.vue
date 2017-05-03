@@ -39,5 +39,9 @@
         min-width: 320px;
         margin:  0 auto;
         /*background: #f0f0f0;*/
+        &>div{
+            width: 100%;
+            height: 100%;
+        }
     }
 </style>

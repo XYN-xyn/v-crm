@@ -2,7 +2,7 @@
     <div class="companyItems">
         <search
             position="absolute"
-            auto-scroll-to-top top="46px"
+            auto-scroll-to-top top="0" left="0"
             >
         </search>
         <div class="item-container clearfloat">
@@ -47,11 +47,13 @@
         }
     }
 </script>
-<style lang="less" scoped>
+<style lang="less">
     .companyItems{
         height: calc(~'100% - 44px');
         background-color: #f5f5f5;
         padding: 0 5px 0 0;
+        position: relative;
+        overflow: scroll;
         .weui-search-bar{
             background-color: #f5f5f5;
             &:before{
@@ -61,8 +63,16 @@
                  border-bottom: none;
             }
         }
+        .weui-search-bar__cancel-btn{
+            color: #64C0F4;
+            font-size: 14px;
+        }
         .item-container{
-            width: 100%;
+            /*width: 100%;*/
+            width: calc(100% - 5px);
+            position: absolute;
+            left: 0;
+            top: 46px;
             .item{
                 width: calc(~'50% - 5px');
                 margin-left: 5px;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="footer-list">
         <footer>
             <ul class="footerDeatl">
                 <router-link tag="li" to="/" class="active">
@@ -10,10 +10,10 @@
                     <img src="../../../assets/img/footer_02.jpg">
                     <p>财务中心</p>
                 </router-link>
-                <li>
+                <router-link tag="li" to="/supply">
                     <img src="../../../assets/img/footer_03.jpg">
                     <p>供应链</p>
-                </li>
+                </router-link>
                 <li>
                     <img src="../../../assets/img/footer_04.png">
                     <p>自媒体</p>
@@ -26,11 +26,15 @@
 
 </script>
 <style scoped lang="less">
-    footer {
-        background: #fff;
+    .footer-list{
         position: fixed;
         left: 0;
         bottom: 0;
+        width: 100%;
+        height: 49px;
+    }
+    footer {
+        background: #fff;
         width: 100%;
         height: 49px;
         .footerDeatl {

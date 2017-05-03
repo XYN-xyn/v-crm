@@ -36,7 +36,6 @@
         },
         methods: {
             onItemClick(index) {
-                //console.log(this.$router);
                 if(index == 1){
                     this.$router.push('company');
                 } else {
@@ -46,7 +45,7 @@
         }
     }
 </script>
-<style lang="less" scoped>
+<style lang="less">
     @blue: #64C0F4;
     .compony{
         height: 100%;

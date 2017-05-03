@@ -124,7 +124,7 @@
         }
     }
 </script>
-<style lang="less" scoped>
+<style lang="less">
     .shopItem-contanier{
         background-color: #f5f5f5;
         padding-bottom: 45px;
