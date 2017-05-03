@@ -59,37 +59,37 @@
             <div class="select">
                 <span>颜色分类：</span>
                 <div>
-                    <checker v-model="select" default-item-class="default-color" selected-item-class="selected-color">
-                        <checker-item :value="'a'" :key="1">黑色</checker-item>
-                        <checker-item :value="'b'" :key="2">蓝色</checker-item>
-                        <checker-item :value="'c'" :key="3">紫色</checker-item>
+                    <checker v-model="selectColor" default-item-class="default-color" selected-item-class="selected-color">
+                        <checker-item v-for="(item,index) in colorArr" :key="index" :value="item">{{item.name}}</checker-item>
                     </checker>
                 </div>
             </div>
             <div class="select">
                 <span>规格：</span>
                 <div>
-                    <checker v-model="select" default-item-class="default-color" selected-item-class="selected-color">
-                        <checker-item :value="'a'" :key="1">1.0*2.5m</checker-item>
-                        <checker-item :value="'b'" :key="2">1.0*2.5m</checker-item>
-                        <checker-item :value="'c'" :key="3">1.0*2.5m</checker-item>
+                    <checker v-model="selectType" default-item-class="default-color" selected-item-class="selected-color">
+                        <checker-item v-for="(item,index) in typeArr" :key="index" :value="item">{{item.name}}</checker-item>
                     </checker>
                 </div>
             </div>
             <div class="number">
                 <x-number title="订单数量：" :sep="1" :min="0" width="28px" style="padding: 10px"></x-number>
             </div>
+            <div>
+                <x-button type="primary" class="confirmItem">确定</x-button>
+            </div>
         </popup>
     </div>
 </template>
 <script>
-    import {Popup, Checker, CheckerItem, XNumber} from 'vux';
+    import {Popup, Checker, CheckerItem, XNumber, XButton} from 'vux';
     export default {
         components: {
             Popup,
             Checker,
             CheckerItem,
-            XNumber
+            XNumber,
+            XButton
         },
         mounted(){
             document.title = this.$route.name;
@@ -98,10 +98,18 @@
             return {
                 isHeight: false,
                 popupshow: false,
-                select: {
-                    key: '1',
-                    value: 'a',
-                }
+                colorArr: [
+                    {id: '1',name: '红色'},
+                    {id: '2',name: '紫色'},
+                    {id: '3',name: '蓝色'}
+                ],
+                typeArr: [
+                    {id: '1',name: '1.0*2.5m'},
+                    {id: '2',name: '2.0*2.5m'},
+                    {id: '3',name: '2.5*3.0m'}
+                ],
+                selectColor: {id: '1',name: '红色'},
+                selectType: {id: '1',name: '1.0*2.5m'},
             }
         },
         methods: {
@@ -252,7 +260,7 @@
                 flex-direction: column;
                 font-size: 14px;
                 color: #333;
-                padding-top: 10px;
+                padding-top: 6px;
             }
             .shopItem-h-r{
                 flex-basis: 22px;
@@ -287,7 +295,8 @@
                 padding: 2px 10px;
             }
             .selected-color{
-                border: 1px solid #64C0F4;
+                background-color: #64C0F4;
+                color: #fff;
             }
         }
         .number{
@@ -312,6 +321,20 @@
                 padding: 4px 5px 2px 5px;
                 margin-right: 0;
             }
+        }
+        .weui-btn{
+            border-radius: 0;
+            &:after{
+                border: none;
+             }
+        }
+        .confirmItem{
+            background-color: #64C0F4;
+            color: #fff;
+            &:active{
+                 color: rgba(255, 255, 255, 0.6) !important;
+                 background-color: rgba(100, 192, 244, 0.6) !important;
+             }
         }
     }
 </style>
