@@ -6,8 +6,11 @@ import VueRouter from 'vue-router'
 import App from './App'
 import routes from './router'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
+Vue.prototype.setTitle = function () {
+    return document.title = this.$route.name;
+};
 
 const router = new VueRouter({
     mode: 'history',

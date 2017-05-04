@@ -63,7 +63,7 @@
             }
         },
         mounted(){
-            document.title = this.$route.name;
+            this.setTitle();
         }
     }
 </script>

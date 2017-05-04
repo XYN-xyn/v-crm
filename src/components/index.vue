@@ -13,6 +13,9 @@
             orderIndex,
             supplyIndex,
             vFooter
+        },
+        mounted() {
+            this.setTitle();
         }
     }
 </script>

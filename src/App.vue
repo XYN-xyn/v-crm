@@ -5,15 +5,19 @@
 </template>
 
 <script>
-    import index from './components/index.vue';
-    import companyIndex from './components/company/index.vue';
-    import shopItem from './components/shopItems/index.vue';
+    import index from './components/index.vue';//首页
+    import companyIndex from './components/company/index.vue';//企业详情-首页
+    import shopItem from './components/shopItems/index.vue';//商品详情
+    import stockIndex from './components/supply/stock/index.vue';//我的库存
     export default {
         name: 'app',
         components: {
             index,
             companyIndex,
             shopItem
+        },
+        mounted() {
+            this.setTitle();
         }
     }
 </script>

@@ -27,7 +27,7 @@
             }
         },
         mounted(){
-            document.title = this.$route.name;
+            this.setTitle();
         },
         data(){
             return {

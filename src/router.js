@@ -6,9 +6,8 @@
 /*企业详情*/
 //import Company from './components/company/index.vue';
 export default [
-//首页
+    //首页
     {
-        name: '订单管理',
         path: '/',
         component: resolve => System.import('./components/index.vue'),//App.components.index,
         children: [
@@ -20,7 +19,7 @@ export default [
             {
                 name: '订单管理',
                 path: '/order',
-                component: resolve => System.import('./components/index.vue')//App.components.index,
+                component: resolve => System.import('./components/orderMgmt/index/index.vue'),//Index.components.orderIndex
             },
             {
                 name: '供应链',
@@ -29,15 +28,14 @@ export default [
             }
         ]
     },
-// 企业详情
+    // 企业详情
     {
-        name: '企业详情',
-        path: '/company',
+        path: '/',
         component: resolve => System.import('./components/company/index.vue'),//App.components.companyIndex,
         children: [
             {
                 name: '企业详情',
-                path: '/',
+                path: '/company',
                 component: resolve => System.import('./components/company/index/companyInfo.vue')
             },
             {
@@ -47,7 +45,7 @@ export default [
             }
         ]
     },
-//商品详情
+    //商品详情
     {
         name: '商品详情',
         path: '/shopItem',
@@ -55,5 +53,16 @@ export default [
         children: [
 
         ]
+    },
+    //我的库存
+    {
+        name: '我的库存',
+        path: '/stock',
+        component: resolve => System.import('./components/supply/stock/index.vue'),//App.components.shopItem,
+    },
+    {
+        name: '我的库存',
+        path: '/stockItem',
+        component: resolve => System.import('./components/supply/stock/index.vue'),//App.components.shopItem,
     }
 ]

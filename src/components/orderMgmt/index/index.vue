@@ -15,6 +15,9 @@
             vBanner,
             vNav,
             vTodoList,
+        },
+        mounted() {
+            this.setTitle();
         }
     }
 </script>
