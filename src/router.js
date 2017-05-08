@@ -1,7 +1,7 @@
 /**
  * Created by xuyanan on 2017/4/8.
  */
-//import App from './App.vue'
+import App from './App.vue'
 //import Index from './components/index.vue';
 /*企业详情*/
 //import Company from './components/company/index.vue';
@@ -14,12 +14,8 @@ export default [
             {
                 name: '订单管理',
                 path: '/',
-                component: resolve => System.import('./components/orderMgmt/index/index.vue'),//Index.components.orderIndex
-            },
-            {
-                name: '订单管理',
-                path: '/order',
-                component: resolve => System.import('./components/orderMgmt/index/index.vue'),//Index.components.orderIndex
+                alias: '/order',
+                component: resolve => System.import('./components/orderMgmt/index/index.vue')
             },
             {
                 name: '供应链',
@@ -31,7 +27,7 @@ export default [
     // 企业详情
     {
         path: '/',
-        component: resolve => System.import('./components/company/index.vue'),//App.components.companyIndex,
+        component: resolve => System.import('./components/company/index.vue'),
         children: [
             {
                 name: '企业详情',
@@ -49,7 +45,7 @@ export default [
     {
         name: '商品详情',
         path: '/shopItem',
-        component: resolve => System.import('./components/shopItems/index.vue'),//App.components.shopItem,
+        component: resolve => System.import('./components/shopItems/index.vue'),
         children: [
 
         ]
@@ -58,11 +54,21 @@ export default [
     {
         name: '我的库存',
         path: '/stock',
-        component: resolve => System.import('./components/supply/stock/index.vue'),//App.components.shopItem,
+        alias: '/stockItem',
+        component: resolve => System.import('./components/supply/stock/index.vue'),
     },
-    {
-        name: '我的库存',
-        path: '/stockItem',
-        component: resolve => System.import('./components/supply/stock/index.vue'),//App.components.shopItem,
+    //我的下游
+    ,{
+        name: '我的下游',
+        path: '/downstream',
+        //component: resolve => System.import('./components/supply/downstream/index.vue'),
+        component: App.components.downStream,
+    }
+    //我的上游
+    ,{
+        name: '我的上游',
+        path: '/upstream',
+        //component: resolve => System.import('./components/supply/downstream/index.vue'),
+        component: App.components.downStream,
     }
 ]

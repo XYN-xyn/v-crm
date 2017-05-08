@@ -16,9 +16,9 @@
             </div>
         </div>
         <div class="supplyIndex-container-list">
-            <div class="list-item" v-for="item in supplyList">
+            <router-link tag="div" class="list-item" v-for="item in supplyList" :to="item.path">
                 <i :style="{backgroundImage: item.img}"></i><span>{{item.name}}</span>
-            </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -39,25 +39,32 @@
                 supplyList: [
                     {
                         img: `url(${supply_1})`,
-                        name: '我的库存'
+                        name: '我的库存',
+                        path: '/stock'
                     },{
                         img: `url(${supply_2})`,
-                        name: '我的消息'
+                        name: '我的消息',
+                        path: '/message'
                     },{
                         img: `url(${supply_3})`,
-                        name: '我的上游'
+                        name: '我的上游',
+                        path: '/upstream'
                     },{
                         img: `url(${supply_4})`,
-                        name: '我的下游'
+                        name: '我的下游',
+                        path: '/downstream'
                     },{
                         img: `url(${supply_5})`,
-                        name: '智能报表'
+                        name: '智能报表',
+                        path: '/report'
                     },{
                         img: `url(${supply_6})`,
-                        name: '我的收货地址'
+                        name: '我的收货地址',
+                        path: '/adress'
                     },{
                         img: `url(${supply_7})`,
-                        name: '设置'
+                        name: '设置',
+                        path: '/setting'
                     },
                 ]
             }

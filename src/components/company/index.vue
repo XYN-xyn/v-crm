@@ -1,6 +1,6 @@
 <template>
     <div class="compony">
-        <tab>
+        <tab active-color="#64C0F4" defaultColor="#333" bar-active-color="#64C0F4">
             <tab-item :selected="selected == 'company'" @on-item-click="onItemClick(1)">企业</tab-item>
             <tab-item :selected="selected == 'companyItems'" @on-item-click="onItemClick(2)">商品</tab-item>
         </tab>
@@ -46,21 +46,8 @@
     }
 </script>
 <style lang="less">
-    @blue: #64C0F4;
     .compony{
         height: 100%;
         position: relative;
-        .vux-tab {
-            .vux-tab-item{
-                color: #333;
-            }
-            .vux-tab-item.vux-tab-selected {
-                color: @blue;
-                border-bottom: 2px solid @blue;
-            }
-        }
-        .vux-tab-ink-bar{
-            background-color: @blue;
-        }
     }
 </style>

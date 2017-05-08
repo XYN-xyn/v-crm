@@ -9,15 +9,15 @@
     import companyIndex from './components/company/index.vue';//企业详情-首页
     import shopItem from './components/shopItems/index.vue';//商品详情
     import stockIndex from './components/supply/stock/index.vue';//我的库存
+    import downStream from './components/supply/downstream/index.vue';//我的上游
     export default {
         name: 'app',
         components: {
             index,
             companyIndex,
-            shopItem
-        },
-        mounted() {
-            this.setTitle();
+            shopItem,
+            stockIndex,
+            downStream
         }
     }
 </script>
@@ -31,10 +31,6 @@
     html,body{
         overflow: scroll;
         height: 100%;
-    }
-    a{
-        font-family: inherit;
-        color: inherit;
     }
     #app {
         width: 100%;
