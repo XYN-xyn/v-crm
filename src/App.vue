@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import index from './components/index.vue';//首页
+    /*import index from './components/index.vue';//首页
     import companyIndex from './components/company/index.vue';//企业详情-首页
     import shopItem from './components/shopItems/index.vue';//商品详情
     import stockIndex from './components/supply/stock/index.vue';//我的库存
@@ -19,7 +19,7 @@
             stockIndex,
             downStream
         }
-    }
+    }*/
 </script>
 
 <style lang="less">

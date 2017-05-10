@@ -61,14 +61,26 @@ export default [
     ,{
         name: '我的下游',
         path: '/downstream',
-        //component: resolve => System.import('./components/supply/downstream/index.vue'),
-        component: App.components.downStream,
+        component: resolve => System.import('./components/supply/downstream/index.vue'),
+        //component: App.components.downStream,
     }
     //我的上游
     ,{
         name: '我的上游',
         path: '/upstream',
-        //component: resolve => System.import('./components/supply/downstream/index.vue'),
-        component: App.components.downStream,
+        component: resolve => System.import('./components/supply/downstream/index.vue'),
+        //component: App.components.downStream,
+    }
+    //我的消息
+    ,{
+        name: '我的消息',
+        path: '/message',
+        component: resolve => System.import('./components/supply/message/index.vue'),
+    }
+    //设置
+    ,{
+        name: '设置',
+        path: '/setting',
+        component: resolve => System.import('./components/supply/setting/index.vue'),
     }
 ]

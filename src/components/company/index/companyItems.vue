@@ -40,7 +40,7 @@
     </div>
 </template>
 <script>
-    import { Search, Group} from 'vux';
+    import { Search} from 'vux';
     export default {
         components: {
             Search
