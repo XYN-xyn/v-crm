@@ -51,7 +51,7 @@
 <script>
 
 </script>
-<style scoped lang="scss">
+<style scoped lang="less">
     .dealt {
         background-color: #fff;
         border-top: 1px solid #ddd;
