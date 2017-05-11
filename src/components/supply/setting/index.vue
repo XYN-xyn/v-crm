@@ -5,38 +5,45 @@
                 <i :style="{backgroundImage: item.img}"></i><span>{{item.name}}</span>
             </router-link>
         </div>
+        <div class="setting-loginout">
+            <x-button type="primary" class="confirmItem">退出登录</x-button>
+        </div>
     </div>
 </template>
 <script>
-    const supply_1 = require('../../assets/img/supply-1.png');
-    const supply_2 = require('../../assets/img/supply-2.png');
-    const supply_3 = require('../../assets/img/supply-3.png');
-    const supply_4 = require('../../assets/img/supply-4.png');
-    const supply_5 = require('../../assets/img/supply-5.png');
+    const setting_1 = require('../../../assets/img/设置_03.png');
+    const setting_2 = require('../../../assets/img/设置_06.png');
+    const setting_3 = require('../../../assets/img/设置_08.png');
+    const setting_4 = require('../../../assets/img/设置_10.png');
+    const setting_5 = require('../../../assets/img/设置_12.png');
+    import {XButton} from 'vux'
     export default {
+        components: {
+            XButton
+        },
         data() {
             return {
                 settingList: [
                     {
-                        img: `url(${supply_1})`,
+                        img: `url(${setting_1})`,
                         name: '新消息通知',
-                        path: '/stock'
+                        path: '/newMessage'
                     },{
-                        img: `url(${supply_2})`,
+                        img: `url(${setting_2})`,
                         name: '隐私',
-                        path: '/message'
+                        path: '/privacy'
                     },{
-                        img: `url(${supply_3})`,
+                        img: `url(${setting_3})`,
                         name: '通用',
-                        path: '/upstream'
+                        path: '/currency'
                     },{
-                        img: `url(${supply_4})`,
+                        img: `url(${setting_4})`,
                         name: '帮助与反馈',
-                        path: '/downstream'
+                        path: '/help'
                     },{
-                        img: `url(${supply_5})`,
+                        img: `url(${setting_5})`,
                         name: '关于供应链管理平台',
-                        path: '/report'
+                        path: '/about'
                     }
                 ]
             }
@@ -48,6 +55,7 @@
 </script>
 <style lang="less">
     .setting-container{
+        background-color: #f5f5f5;
         .setting-container-list{
             border-top: 1px solid #d6d6d6;
             .list-item{
@@ -55,6 +63,10 @@
                 border-bottom: 1px solid #d6d6d6;
                 padding: 14px 0;
                 font-size: 15px;
+                &:nth-child(4){
+                    margin-top: 10px;
+                    border-top: 1px solid #d6d6d6;
+                 }
                 i{
                     display: inline-block;
                     width: 22px;
@@ -71,6 +83,26 @@
                 &:nth-child(6){
                      border-top: 1px solid #d6d6d6;
                      margin-top: 9px;
+                }
+            }
+        }
+        .setting-loginout{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            .weui-btn{
+                border-radius: 0;
+                &:after{
+                     border: none;
+                }
+            }
+            .confirmItem{
+                background-color: #64C0F4;
+                color: #fff;
+                &:active{
+                     color: rgba(255, 255, 255, 0.6) !important;
+                     background-color: rgba(100, 192, 244, 0.6) !important;
                 }
             }
         }

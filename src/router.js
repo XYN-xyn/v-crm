@@ -23,7 +23,14 @@ export default [
                 component: resolve => System.import('./components/supply/index.vue'),
             }
         ]
-    },
+    }
+    //销售历史
+    ,{
+        name: '销售历史',
+        path: '/saleHistory',
+        component: resolve => System.import('./components/orderMgmt/sellHistory/index.vue')
+    }
+    ,
     // 企业详情
     {
         path: '/',
