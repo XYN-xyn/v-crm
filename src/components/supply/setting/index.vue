@@ -1,7 +1,7 @@
 <template>
     <div class="setting-container">
         <div class="setting-container-list">
-            <router-link tag="div" class="list-item" v-for="item in settingList" :to="item.path">
+            <router-link tag="div" class="list-item" v-for="(item,index) in settingList" :key="index" :to="item.path">
                 <i :style="{backgroundImage: item.img}"></i><span>{{item.name}}</span>
             </router-link>
         </div>

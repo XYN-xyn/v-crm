@@ -26,9 +26,35 @@ export default [
     }
     //销售历史
     ,{
-        name: '销售历史',
-        path: '/saleHistory',
-        component: resolve => System.import('./components/orderMgmt/sellHistory/index.vue')
+        path: '/',
+        component: resolve => System.import('./components/orderMgmt/sellHistory/index.vue'),
+        children: [
+            {
+                name: '销售历史',
+                path: '/sellItem0',
+                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
+            },
+            {
+                name: '销售历史',
+                path: '/sellItem1',
+                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
+            },
+            {
+                name: '销售历史',
+                path: '/sellItem2',
+                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
+            },
+            {
+                name: '销售历史',
+                path: '/sellItem3',
+                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
+            },
+            {
+                name: '销售历史',
+                path: '/sellItem4',
+                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
+            }
+        ]
     }
     ,
     // 企业详情

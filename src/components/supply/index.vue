@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="supplyIndex-container-list">
-            <router-link tag="div" class="list-item" v-for="item in supplyList" :to="item.path">
+            <router-link tag="div" class="list-item" v-for="(item,index) in supplyList" :key="index" :to="item.path">
                 <i :style="{backgroundImage: item.img}"></i><span>{{item.name}}</span>
             </router-link>
         </div>

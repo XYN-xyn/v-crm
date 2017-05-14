@@ -4,7 +4,7 @@
             <tab-item :selected="index == 0" @on-item-click="onItemClick(0)">物料</tab-item>
             <tab-item :selected="index == 1" @on-item-click="onItemClick(1)">商品</tab-item>
         </tab>
-        <swiper v-model="index" :show-dots="false" height="atuo">
+        <swiper v-model="index" :show-dots="false" @on-index-change="itemChange">
             <swiper-item>
                 <div class="stock-list">
                     <div class="stock-list-l">
@@ -151,6 +151,13 @@
         methods: {
             onItemClick(i) {
                 this.index = i;
+                if(i == 0){
+                    this.$router.push('stock');
+                } else {
+                    this.$router.push('stockItem');
+                }
+            },
+            itemChange(i){
                 if(i == 0){
                     this.$router.push('stock');
                 } else {
