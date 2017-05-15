@@ -19,14 +19,14 @@
             </li>
         </ul>
         <ul class="navList">
-            <li>
+            <router-link tag="li" to="/sellItem0">
                 <img src="../../../assets/img/index_nav_05.jpg">
                 <div>销售历史</div>
-            </li>
-            <li>
+            </router-link>
+            <router-link tag="li" to="/shoppingItem0">
                 <img src="../../../assets/img/index_nav_06.jpg">
                 <div>采购历史</div>
-            </li>
+            </router-link>
             <li>
                 <img src="../../../assets/img/index_nav_07.jpg">
                 <div>扫码下单</div>

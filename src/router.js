@@ -56,6 +56,38 @@ export default [
             }
         ]
     }
+    //采购历史
+    ,{
+        path: '/',
+        component: resolve => System.import('./components/orderMgmt/shoppingHistory/index.vue'),
+        children: [
+            {
+                name: '采购历史',
+                path: '/shoppingItem0',
+                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+            },
+            {
+                name: '采购历史',
+                path: '/shoppingItem1',
+                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+            },
+            {
+                name: '采购历史',
+                path: '/shoppingItem2',
+                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+            },
+            {
+                name: '采购历史',
+                path: '/shoppingItem3',
+                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+            },
+            {
+                name: '采购历史',
+                path: '/shoppingItem4',
+                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+            }
+        ]
+    }
     ,
     // 企业详情
     {
