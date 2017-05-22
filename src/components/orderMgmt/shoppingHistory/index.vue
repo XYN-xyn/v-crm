@@ -25,16 +25,14 @@
             SwiperItem,
             shoppingItem
         },
-        created () {
-            //const _this = this;
-            this.itemList.forEach((el,i) => {
-                if(this.$route.path == el.path){
-                    this.index = i;
-                }
-            });
-        },
         mounted () {
             this.setTitle();
+            this.itemList.forEach((el,i) => {
+                if(this.$route.path == el.path){
+                    //this.index = i;
+                    this.itemChange(i);
+                }
+            });
         },
         data () {
             return {
@@ -75,11 +73,11 @@
         methods: {
             onItemClick(i) {
                 this.index = i;
-
-                this.$router.push(this.itemList[i].path);
+                this.$router.replace(this.itemList[i].path);
             },
             itemChange(i) {
-                this.$router.push(this.itemList[i].path);
+                this.index = i;
+                this.$router.replace(this.itemList[i].path);
             }
         }
     }

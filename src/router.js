@@ -32,26 +32,7 @@ export default [
             {
                 name: '销售历史',
                 path: '/sellItem0',
-                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
-            },
-            {
-                name: '销售历史',
-                path: '/sellItem1',
-                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
-            },
-            {
-                name: '销售历史',
-                path: '/sellItem2',
-                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
-            },
-            {
-                name: '销售历史',
-                path: '/sellItem3',
-                component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
-            },
-            {
-                name: '销售历史',
-                path: '/sellItem4',
+                alias: ['/sellItem1','/sellItem2','/sellItem3','/sellItem4'],
                 component: resolve => System.import('./components/orderMgmt/sellHistory/sub/sellItem.vue'),
             }
         ]
@@ -64,27 +45,21 @@ export default [
             {
                 name: '采购历史',
                 path: '/shoppingItem0',
+                alias: ['/shoppingItem1','/shoppingItem2','/shoppingItem3','/shoppingItem4'],
                 component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
-            },
+            }
+        ]
+    }
+    //订单审核
+    ,{
+        path: '/',
+        component: resolve => System.import('./components/orderMgmt/orderReview/index.vue'),
+        children: [
             {
-                name: '采购历史',
-                path: '/shoppingItem1',
-                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
-            },
-            {
-                name: '采购历史',
-                path: '/shoppingItem2',
-                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
-            },
-            {
-                name: '采购历史',
-                path: '/shoppingItem3',
-                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
-            },
-            {
-                name: '采购历史',
-                path: '/shoppingItem4',
-                component: resolve => System.import('./components/orderMgmt/shoppingHistory/sub/shoppingItem.vue'),
+                name: '订单审核',
+                path: '/reviewItem0',
+                alias: ['/reviewItem1','/reviewItem2','/reviewItem3'],
+                component: resolve => System.import('./components/orderMgmt/orderReview/sub/reviewItem.vue'),
             }
         ]
     }

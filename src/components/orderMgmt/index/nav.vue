@@ -1,39 +1,39 @@
 <template>
     <div class="nav">
         <ul class="navList">
-            <router-link tag="li" to="/">
-                <img src="../../../assets/img/index_nav_01.jpg">
-                <div>采购订单</div>
-            </router-link>
-            <li>
-                <img src="../../../assets/img/index_nav_02.jpg">
-                <div>销售订单</div>
-            </li>
-            <li>
-                <img src="../../../assets/img/index_nav_03.jpg">
-                <div>待审核</div>
-            </li>
-            <li>
-                <img src="../../../assets/img/index_nav_04.jpg">
-                <div>采购退货</div>
-            </li>
-        </ul>
-        <ul class="navList">
             <router-link tag="li" to="/sellItem0">
-                <img src="../../../assets/img/index_nav_05.jpg">
+                <img src="../../../assets/img/boss_05.png">
                 <div>销售历史</div>
             </router-link>
             <router-link tag="li" to="/shoppingItem0">
-                <img src="../../../assets/img/index_nav_06.jpg">
+                <img src="../../../assets/img/boss_07.png">
                 <div>采购历史</div>
             </router-link>
+            <router-link tag="li" to="/reviewItem0">
+                <img src="../../../assets/img/boss_09.png">
+                <div>订单审核</div>
+            </router-link>
             <li>
-                <img src="../../../assets/img/index_nav_07.jpg">
-                <div>扫码下单</div>
+                <img src="../../../assets/img/boss_11.png">
+                <div>报批历史</div>
+            </li>
+        </ul>
+        <ul class="navList">
+            <router-link tag="li" to="/">
+                <img src="../../../assets/img/boss_18.png">
+                <div>评价订单</div>
+            </router-link>
+            <li>
+                <img src="../../../assets/img/boss_20.png">
+                <div>采购退货</div>
             </li>
             <li>
-                <img src="../../../assets/img/index_nav_08.jpg">
-                <div>购物车</div>
+                <img src="../../../assets/img/boss_23.png">
+                <div>绩效考核</div>
+            </li>
+            <li>
+                <img src="../../../assets/img/boss_25.png">
+                <div>操作历史</div>
             </li>
         </ul>
     </div>

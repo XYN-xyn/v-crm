@@ -5,13 +5,13 @@
     </div>
 </template>
 <script>
-    import orderIndex from './orderMgmt/index/index.vue';
-    import supplyIndex from './supply/index.vue';
+    /*import orderIndex from './orderMgmt/index/index.vue';
+    import supplyIndex from './supply/index.vue';*/
     import vFooter from './orderMgmt/index/footer.vue';
     export default {
         components: {
-            orderIndex,
-            supplyIndex,
+            /*orderIndex,
+            supplyIndex,*/
             vFooter
         },
         mounted() {
