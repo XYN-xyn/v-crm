@@ -61,7 +61,7 @@
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
                     <div style="background-color: #64C0F4;color: #fff;line-height: 2.0em;">
-                    <span>
+                    <span @click="toReviewInfo(1)">
                         订单审核
                     </span>
                     </div>
@@ -102,7 +102,7 @@
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
                     <div style="background-color: #64C0F4;color: #fff;line-height: 2.0em;">
-                    <span>
+                    <span @click="toReviewInfo(2)">
                         定制审核
                     </span>
                     </div>
@@ -171,7 +171,7 @@
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
                     <div style="background-color: #64C0F4;color: #fff;line-height: 2.0em;">
-                    <span>
+                    <span @click="toReviewInfo(3)">
                         退货审核
                     </span>
                     </div>
@@ -181,7 +181,17 @@
     </div>
 </template>
 <script>
-
+    export default {
+        methods: {
+            toReviewInfo(type) {
+                switch (type) {
+                    case 1 : this.$router.push('/reviewInfo');break;
+                    case 2 : this.$router.push();break;
+                    case 3 : this.$router.push();break;
+                }
+            }
+        }
+    }
 </script>
 <style lang="less">
     .reviewItem-container{
@@ -193,7 +203,7 @@
                 display: flex;
                 /*margin-top: 10px;*/
                 justify-content: space-between;
-                padding: 5px 0;
+                padding: 10px 0;
                 span{
                     font-size: 14px;
                     &:first-child{

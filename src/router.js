@@ -63,6 +63,11 @@ export default [
             }
         ]
     }
+    ,{
+        name: '审核详情',
+        path: '/reviewInfo',
+        component: resolve => System.import('./components/orderMgmt/orderReview/sub/reviewInfo.vue'),
+    }
     ,
     // 企业详情
     {

@@ -214,7 +214,7 @@
                 display: flex;
                 /*margin-top: 10px;*/
                 justify-content: space-between;
-                padding: 5px 0;
+                padding: 10px 0;
                 span{
                     font-size: 14px;
                     &:first-child{
