@@ -206,6 +206,7 @@
         }
         .shopItem-img{
             background-color: #fff;
+            padding-bottom: 45px;
             .shopItem-img-h{
                 font-size: 15px;
                 padding: 0 10px;

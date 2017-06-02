@@ -61,14 +61,11 @@
             <div class="reviewInfo-container-b">
                 <div class="reviewInfo-container-b-l">
                     <div>
-                        <div class="payType">
-                            <span>付款状态</span>
+                        <div>
+                            <span>采购员：</span><span style="color: #666;">张三</span>
                         </div>
                         <div>
-                            <span>已付款：</span><span style="color: #666;">￥0</span>
-                        </div>
-                        <div>
-                            <span>待付款：</span><span style="color: #666;">￥1000.00</span>
+                            <span>电话：</span><span style="color: #666;">15654321234</span>
                         </div>
                     </div>
                 </div>
@@ -76,19 +73,36 @@
                     <div>
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
-                    <div style="background-color: #64C0F4;color: #fff;line-height: 2.0em;">
-                    </div>
                 </div>
             </div>
             <div class="reviewInfo-group">
-                <div>
+                <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
                     <span>审核结果：</span>
                 </div>
-                <div>
-                    
+                <div style="flex-shrink: 1;flex-grow: 1;">
+                    <checklist required label-position="left" :options="reviewSelect" v-model="reviewResult" @on-change="change"></checklist>
+                </div>
+            </div>
+            <div class="reviewInfo-group">
+                <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
+                    <span>审核意见：</span>
+                </div>
+                <div style="flex-shrink: 1;flex-grow: 1;">
+                    <input type="text" placeholder="请填写审核意见（20字以内）">
+                </div>
+            </div>
+            <div class="reviewInfo-group">
+                <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
+                    <span>审批历史：</span>
+                </div>
+                <div style="flex-shrink: 1;flex-grow: 1;height: 43px;">
+                    <i class="right"></i>
                 </div>
             </div>
         </div>
+        <footer>
+            <span>确定</span>
+        </footer>
     </div>
 </template>
 <script>
@@ -96,6 +110,22 @@
     export default {
         components: {
             Checklist
+        },
+        data(){
+            return {
+                reviewSelect: [
+                    {key: 'resolve',value: '接受订单'},{key: 'reject',value: '驳回订单'}
+                ],
+                reviewResult: ['resolve']
+            }
+        },
+        methods: {
+            change(val){
+                this.$nextTick(function(){
+                    this.reviewResult = [val[this.reviewResult.length - 1]];
+
+                })
+            }
         }
     }
 </script>
@@ -104,6 +134,7 @@
         background-color: #f5f5f5;
         .reviewInfo-list{
             background-color: #fff;
+            margin-bottom: 45px;
             .address{
                 font-size: 14px;
                 color: #666;
@@ -139,7 +170,6 @@
             .reviewInfo-container-h{
                 display: flex;
                 justify-content: space-between;
-                /*padding: 5px 0;*/
                 padding-top: 10px;
                 background-color: #f5f5f5;
                 span{
@@ -219,11 +249,10 @@
                 justify-content: space-between;
                 background-color: #fff;
                 font-size: 12px;
-                padding: 5px 0 10px 0;
+                padding: 10px 0 10px 0;
                 .reviewInfo-container-b-l{
                     padding-left: 10px;
                     flex-grow: 1;
-                    height: 67px;
                     .payType{
                         padding: 5px 0;
                     }
@@ -234,9 +263,63 @@
                     flex-direction: column;
                     justify-content: space-around;
                     text-align: center;
-                    height: 67px;
                 }
             }
+            .reviewInfo-group{
+                display: flex;
+                font-size: 14px;
+                align-items: center;
+                background-color: #f5f5f5;
+                padding-top: 10px;
+                >div{
+                    background-color: #fff;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+                .weui-cells_checkbox{
+                    display: flex;
+                }
+                .weui-cells{
+                    &:before{
+                        border-top: none;
+                    }
+                    &:after{
+                        border-bottom: none;
+                    }
+                }
+                .weui-cell{
+                    font-size: 12px;
+                    &:before{
+                        border-top: none;
+                    }
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    line-height: 43px;
+                    width: 100%;
+                }
+                .right{
+                    display: block;
+                    width: 22px;
+                    height: 22px;
+                    background-image: url('../../../../assets/img/right.png');
+                    background-size: cover;
+                    float: right;
+                    margin-top: 10px;
+                }
+            }
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            background-color: #64C0F4;
+            line-height: 45px;
+            text-align: center;
+            color: #fff;
         }
     }
 </style>
