@@ -59,9 +59,9 @@
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
                     <div style="background-color: #64C0F4;color: #fff;line-height: 2.0em;">
-                    <span>
-                        沟通
-                    </span>
+                        <span>
+                            沟通
+                        </span>
                     </div>
                 </div>
             </div>

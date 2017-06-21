@@ -1,6 +1,6 @@
 <template>
-    <div class="reviewInfo-container">
-        <div class="reviewInfo-list">
+    <div class="historyInfo-container">
+        <div class="historyInfo-list">
             <div class="address">
                 <div class="address-name">
                     <div>
@@ -20,37 +20,37 @@
                     </div>
                 </div>
             </div>
-            <div class="reviewInfo-container-h">
+            <div class="historyInfo-container-h">
                 <span>当当塑料制品有限公司</span>
                 <span>2017-05-13</span>
             </div>
-            <div class="reviewInfo-container-c">
-                <div class="reviewInfo-l">
+            <div class="historyInfo-container-c">
+                <div class="historyInfo-l">
                     <img src="../../../../assets/img/stock-item.png" alt="">
                 </div>
-                <div class="reviewInfo-m">
+                <div class="historyInfo-m">
                     <span>A类1型号商品</span>
                     <span>高级定制版黑色塑料置物架</span>
                     <span style="color: #666;">采购说明：请准时交货,并保证商品质量</span>
                     <span style="color: #666;">发货时间：2017-04-01前</span>
                 </div>
-                <div class="reviewInfo-r">
+                <div class="historyInfo-r">
                     <span style="color: #ed0737">￥5000</span>
                     <span style="color: #64C0F4;">X100件</span>
                 </div>
             </div>
-            <div class="reviewInfo-container-c">
-                <div class="reviewInfo-l">
+            <div class="historyInfo-container-c">
+                <div class="historyInfo-l">
                     <img src="../../../../assets/img/stock-item.png" alt="">
                 </div>
 
-                <div class="reviewInfo-m">
+                <div class="historyInfo-m">
                     <span>A类1型号商品</span>
                     <span>高级定制版黑色塑料置物架</span>
                     <span style="color: #666;">采购说明：请准时交货,并保证商品质量</span>
                     <span style="color: #666;">发货时间：2017-04-01前</span>
                 </div>
-                <div class="reviewInfo-r">
+                <div class="historyInfo-r">
                     <span style="color: #ed0737">￥5000</span>
                     <span style="color: #64C0F4;">X100件</span>
                 </div>
@@ -58,8 +58,8 @@
             <div style="font-size: 12px;background-color: #f5f5f5;padding: 5px 0 5px 10px;margin-top: 10px;">
                 <span>订单说明：加双蛋，少盐</span>
             </div>
-            <div class="reviewInfo-container-b">
-                <div class="reviewInfo-container-b-l">
+            <div class="historyInfo-container-b">
+                <div class="historyInfo-container-b-l">
                     <div>
                         <div>
                             <span>采购员：</span><span style="color: #666;">张三</span>
@@ -69,21 +69,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="reviewInfo-container-b-r">
+                <div class="historyInfo-container-b-r">
                     <div>
                         <span>合计</span><span style="font-size: 14px;color: #ed0737;">￥10000</span>
                     </div>
                 </div>
             </div>
-            <div class="reviewInfo-group">
+            <div class="historyInfo-group">
                 <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
                     <span>审核结果：</span>
                 </div>
-                <div style="flex-shrink: 1;flex-grow: 1;">
-                    <checklist required label-position="left" :options="reviewSelect" v-model="reviewResult" @on-change="change"></checklist>
+                <div style="flex-shrink: 1;flex-grow: 1;line-height: 43px;">
+                    <span>接受订单</span>
                 </div>
             </div>
-            <div class="reviewInfo-group">
+            <div class="historyInfo-group">
                 <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
                     <span>审核意见：</span>
                 </div>
@@ -91,7 +91,7 @@
                     <input type="text" placeholder="请填写审核意见（20字以内）">
                 </div>
             </div>
-            <div class="reviewInfo-group" @click="dafaultShow = true">
+            <div class="historyInfo-group" @click="dafaultShow = true">
                 <div style="flex-basis: 70px;flex-grow: 0;flex-shrink: 0;height: 43px;line-height: 43px;padding-left: 10px;">
                     <span>审批历史：</span>
                 </div>
@@ -120,13 +120,12 @@
     </div>
 </template>
 <script>
-    import { TransferDom,Checklist,Popup } from 'vux';
+    import { TransferDom,Popup } from 'vux';
     export default {
         directives: {
             TransferDom
         },
         components: {
-            Checklist,
             Popup
         },
         data(){
@@ -142,61 +141,16 @@
             change(val){
                 this.$nextTick(function(){
                     this.reviewResult = [val[this.reviewResult.length - 1]];
-
+                    
                 })
             }
         }
     }
 </script>
 <style lang="less">
-    .review-popup{
-        .vux-close{
-            width: 24px;
-            height: 24px;
-            text-align: center;
-            border-radius: 11px;
-            background-color: #fff;
-            border: 1px solid #98979d;
-        }
-        .left{
-            display: block;
-            width: 22px;
-            height: 22px;
-            background-image: url('../../../../assets/img/left.png');
-            background-size: cover;
-            float: left;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .popup-content{
-            display: flex;
-            justify-content: space-between;
-            line-height: 2.5em;
-            background-color: #fff;
-            font-size: 14px;
-            border-bottom: 1px solid #ccc;
-        }
-            .popup-item1{
-                flex-basis: 64px;
-                flex-grow: 0;
-                flex-shrink: 0;
-                margin-left: 10px;
-            }
-            .popup-item2{
-                flex-grow: 1;
-                flex-shrink: 1;
-                text-align: center;
-            }
-            .popup-item3{
-                flex-basis: 89px;
-                flex-grow: 0;
-                flex-shrink: 0;
-                margin-right: 10px;
-            }
-    }
-    .reviewInfo-container{
+    .historyInfo-container{
         background-color: #f5f5f5;
-        .reviewInfo-list{
+        .historyInfo-list{
             background-color: #fff;
             margin-bottom: 45px;
             .address{
@@ -231,7 +185,7 @@
                     }
                 }
             }
-            .reviewInfo-container-h{
+            .historyInfo-container-h{
                 display: flex;
                 justify-content: space-between;
                 padding-top: 10px;
@@ -254,17 +208,17 @@
                     }
                 }
             }
-            .reviewInfo-files{
+            .historyInfo-files{
                 background-color: #f5f5f5;
                 >div{
                     float: left;
                 }
-                 .file-name{
-                     margin-left: 10px;
-                     font-size: 12px;
-                     padding-top: 10px;
-                 }
-                 .file-list{
+                .file-name{
+                    margin-left: 10px;
+                    font-size: 12px;
+                    padding-top: 10px;
+                }
+                .file-list{
                     width: 58px;
                     height: 58px;
                     margin: 10px 0 10px 10px;
@@ -272,14 +226,14 @@
                         display: block;
                         width: 100%;
                     }
-                 }
+                }
             }
-            .reviewInfo-container-c{
+            .historyInfo-container-c{
                 display: flex;
                 font-size: 12px;
                 line-height: 1.5em;
                 background-color: #f5f5f5;
-                .reviewInfo-l{
+                .historyInfo-l{
                     flex-basis: 65px;
                     flex-shrink: 0;
                     height: 65px;
@@ -289,7 +243,7 @@
                         width: 100%;
                     }
                 }
-                .reviewInfo-m{
+                .historyInfo-m{
                     flex-grow: 1;
                     flex-shrink: 1;
                     margin: 8px 0 10px 0;
@@ -297,7 +251,7 @@
                         display: block;
                     }
                 }
-                .reviewInfo-r{
+                .historyInfo-r{
                     flex-basis: 50px;
                     flex-shrink: 0;
                     margin-top: 10px;
@@ -308,20 +262,20 @@
                     }
                 }
             }
-            .reviewInfo-container-b{
+            .historyInfo-container-b{
                 display: flex;
                 justify-content: space-between;
                 background-color: #fff;
                 font-size: 12px;
                 padding: 10px 0 10px 0;
-                .reviewInfo-container-b-l{
+                .historyInfo-container-b-l{
                     padding-left: 10px;
                     flex-grow: 1;
                     .payType{
                         padding: 5px 0;
                     }
                 }
-                .reviewInfo-container-b-r{
+                .historyInfo-container-b-r{
                     padding-right: 10px;
                     display: flex;
                     flex-direction: column;
@@ -329,7 +283,7 @@
                     text-align: center;
                 }
             }
-            .reviewInfo-group{
+            .historyInfo-group{
                 display: flex;
                 font-size: 14px;
                 align-items: center;

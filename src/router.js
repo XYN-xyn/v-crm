@@ -68,6 +68,29 @@ export default [
         path: '/reviewInfo',
         component: resolve => System.import('./components/orderMgmt/orderReview/sub/reviewInfo.vue'),
     }
+    //报批历史
+    ,{
+        path: '/reviewHistory',
+        component: resolve => System.import('./components/orderMgmt/reviewHistory/index.vue'),
+        children: [
+            {
+                name: '报批历史',
+                path: '/historyFinshed',
+                alias: '/historyYet',
+                component: resolve => System.import('./components/orderMgmt/reviewHistory/sub/historyTab.vue')
+            }
+        ]
+    }
+    ,{
+        name: '已完成审批',
+        path: '/historyInfo',
+        component: resolve => System.import('./components/orderMgmt/reviewHistory/sub/historyInfo.vue'),
+    }
+    ,{
+        name: '未完成审批',
+        path: '/historyInfo',
+        component: resolve => System.import('./components/orderMgmt/reviewHistory/sub/historyInfo.vue'),
+    }
     ,
     // 企业详情
     {
@@ -101,7 +124,7 @@ export default [
         path: '/stock',
         alias: '/stockItem',
         component: resolve => System.import('./components/supply/stock/index.vue'),
-    },
+    }
     //我的下游
     ,{
         name: '我的下游',

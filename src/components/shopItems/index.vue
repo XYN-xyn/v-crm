@@ -262,13 +262,12 @@
                 padding-top: 6px;
             }
             .shopItem-h-r{
-                flex-basis: 22px;
-                height: 22px;
+                flex-basis: 24px;
+                height: 24px;
                 text-align: center;
                 border-radius: 11px;
                 background-color: #fff;
                 border: 1px solid #98979d;
-                color: #fff;
                 margin-top: 10px;
             }
         }

@@ -13,7 +13,7 @@ Vue.prototype.setTitle = function () {
 };
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes
 })
 

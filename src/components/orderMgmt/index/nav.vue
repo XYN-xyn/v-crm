@@ -13,10 +13,10 @@
                 <img src="../../../assets/img/boss_09.png">
                 <div>订单审核</div>
             </router-link>
-            <li>
+            <router-link tag="li" to="/historyFinshed">
                 <img src="../../../assets/img/boss_11.png">
                 <div>报批历史</div>
-            </li>
+            </router-link>
         </ul>
         <ul class="navList">
             <router-link tag="li" to="/">
